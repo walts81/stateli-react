@@ -1,0 +1,31 @@
+{
+  "name": "stateli-react",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "npm run build && node dist/index.js",
+    "build": "npm run clean:dist && tsc",
+    "prepack": "npm run clean:tarball && npm run build",
+    "test": "tsc && tslint --project tsconfig.json && jest --verbose --coverage",
+    "watch:test": "jest --watch",
+    "clean:dist": "node_modules/.bin/rimraf dist/",
+    "clean:tarball": "node_modules/.bin/rimraf stateli*.tgz"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "redux": "^4.0.5",
+    "stateli": "file:stateli-1.0.1.tgz"
+  },
+  "devDependencies": {
+    "@types/react": "^16.9.27",
+    "@types/react-dom": "^16.9.5",
+    "rimraf": "^3.0.2",
+    "tslint": "^6.1.0",
+    "typescript": "^3.8.3"
+  }
+}
